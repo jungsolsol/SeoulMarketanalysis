@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log</title>
+
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="log1">        
+        <img src="data:image/png;base64, {{ plot_url }}">
+    </div>
+    <div class="log2">
+        <div id='div_top'><h1 id='div_font1'>업종 검색횟수 상위5종목</h1>
+            {% for key,value in job.items() %}
+                <option id='div_font2'>{{ key }} : {{value}}</option>
+            {% endfor %}
+        </div>
+        <div id='div_mid'><h1 id='div_font1'>구 검색횟수 상위5종목</h1>
+            {% for key,value in gu.items() %}
+                <option id='div_font2'>{{ key }} : {{value}}</option>
+            {% endfor %}
+        </div>
+        <div id='div_bottom'><h1 id='div_font1'>동 검색횟수 상위5종목</h1>
+            {% for key,value in dong.items() %}
+                <option id='div_font2'>{{ key }} : {{value}}</option>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+</body>
+</html>
